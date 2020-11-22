@@ -19,7 +19,35 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    //常量定义
+    ext {
+        bintrayRepo = "maven"
+        bintrayName = "SearchBarWidget" //发布到JCenter上的项目名字
+
+        publishedGroupId = "com.wjruiying.searchbarwidget" //函数库的Maven Group ID
+        libraryName = "searchbarwidget" //函数库名字
+        artifact = "searchbarwidget" //构件的名字
+
+        libraryDescription = "This is a search bar widget library" //函数库的描述
+
+        siteUrl = "https://github.com/wj-widget-android/SearchBarWidget" //定义函数库的主页
+        gitUrl = "https://github.com/wj-widget-android/SearchBarWidget.git" //定义函数库的GitHub仓库地址
+
+        libraryVersion = "0.1.0" //函数库的版本号
+
+        developerId = "wjruiying"
+        developerName = "wjruiying"
+        developerEmail = "schiffer.ji.cn@gmail.com"
+
+        licenseName = "The Apache Software License, Version 2.0"
+        licenseUrl = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        allLicenses = ["Apache-2.0"]
+    }
 }
+
+apply from: "install.gradle"
+apply from: "bintray.gradle"
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
